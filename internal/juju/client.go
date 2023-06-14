@@ -34,6 +34,7 @@ type Client struct {
 	Offers       offersClient
 	SSHKeys      sshKeysClient
 	Users        usersClient
+	Clouds		 cloudsClient
 }
 
 type ConnectionFactory struct {
@@ -47,6 +48,7 @@ func NewClient(config Configuration) (*Client, error) {
 
 	return &Client{
 		Applications: *newApplicationClient(cf),
+		Clouds:		  *newCloudsClient(cf),
 		Credentials:  *newCredentialsClient(cf),
 		Integrations: *newIntegrationsClient(cf),
 		Machines:     *newMachinesClient(cf),

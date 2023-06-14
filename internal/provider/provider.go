@@ -68,6 +68,7 @@ func New(version string) func() *schema.Provider {
 				"juju_machine":      resourceMachine(),
 				"juju_ssh_key":      resourceSSHKey(),
 				"juju_user":         resourceUser(),
+				"juju_cloud":        resourceCloud(),
 			},
 		}
 
